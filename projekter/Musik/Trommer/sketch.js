@@ -3,6 +3,7 @@ let KickDrum;
 let HiHat;
 let Crash;
 let FloorDrum;
+let Drum
 
 function preload(){
   soundFormats('WAV','mp3');
@@ -11,6 +12,7 @@ function preload(){
   HiHat=loadSound('Drums/HiHat');
   Crash=loadSound('Drums/crash');
   FloorDrum=loadSound('Drums/floorDrum');
+  Drum=loadSound('Drums/Drum');
 }
 
 
@@ -45,9 +47,11 @@ function draw() {
     SnareDrum.play();
   }//venstre tromme over stortromme
   else if((mouseX>212 && mouseX<287) && (mouseY> 174 && mouseY<224)){
+    Drum.play();
     console.log('hej');
   }// højre tromme over stortromme
   else if((mouseX>311 && mouseX<387) && (mouseY> 174 && mouseY<224)){
+    Drum.play();
     console.log('hej');
   }//Floordrum
   else if((mouseX>379 && mouseX<449) && (mouseY> 252 && mouseY<296)){
