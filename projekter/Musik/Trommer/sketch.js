@@ -12,7 +12,7 @@ function preload(){
   HiHat=loadSound('Drums/HiHat');
   Crash=loadSound('Drums/crash');
   FloorDrum=loadSound('Drums/floorDrum');
-  Drum=loadSound('Drums/Drum');
+  Drum=loadSound('Drums/Drum.mp3');
 }
 
 
