@@ -11,6 +11,7 @@ let note2;
 let note3;
 
 function preload() {
+  // loader de lyde guitaren skal lave
   soundFormats("WAV", "mp3");
   note1 = loadSound("Notes/C_Major7ShortGuitar_725");
   note2 = loadSound("Notes/Gm_Minor7ShortGuitar_725");
@@ -19,6 +20,7 @@ function preload() {
 
 function setup() {
   createCanvas(500, 600);
+  // giver figurene der basis værdier
   CircleY = 50;
   CircleSpeed = random(1, 5);
   SquareY = 50;
@@ -29,6 +31,7 @@ function setup() {
 }
 
 function draw() {
+  //for figurne til at bevæge sig
   CircleY += CircleSpeed;
   SquareY += SquareSpeed;
   CircleY2 += CircleSpeed2;
@@ -47,6 +50,7 @@ function draw() {
   rect(200, SquareY, 50);
   circle(300, CircleY2, 50);
 
+  // for ciklen til at komme tilbage hvis den forlader skærmen
   if (CircleY > height + 25) {
     CircleY = -50;
     CircleSpeed = random(1, 5);
@@ -63,12 +67,14 @@ function draw() {
     score--;
   }
 
+  // skriver anatl point man har
   strokeWeight(0);
   fill(0);
   text(score, 50, 100);
 }
 
 function keyPressed() {
+  // hvis der klikkes på en knap tjekkes der hvor figuren er og hvis den er indenfor et bestem område vil man enten få eller miste point
   // for den første cirkle
   if (keyCode == "81" && CircleY < 500) {
     score--;

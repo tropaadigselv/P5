@@ -1,6 +1,3 @@
-/* todo
-    se om der er en bedre måde at skifte node på.
-*/
 let Node1;
 let Node2;
 let Node3;
@@ -28,6 +25,7 @@ let Node24;
 let Node25;
 
 function preload() {
+  // loader de lyde klaveret skal lave
   soundFormats("mp3", "ogg");
   Node1 = loadSound("noder/d3");
   Node2 = loadSound("noder/e3");
@@ -120,8 +118,6 @@ function setup() {
   text("C", 670, 230);
 }
 function draw() {
-  //console.log('x ',mouseX, 'y ', mouseY )
-
   //tjekker hvilken tangent man trykker på med musen og spiller så den tilhørende node.
   //de hvide
   if (mouseIsPressed) {

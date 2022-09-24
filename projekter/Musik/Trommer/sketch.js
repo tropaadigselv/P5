@@ -6,6 +6,7 @@ let FloorDrum;
 let Drum;
 
 function preload() {
+  //loader de lyde tommesættet skal lave
   soundFormats("WAV", "mp3");
   SnareDrum = loadSound("Drums/snare");
   KickDrum = loadSound("Drums/kick");
@@ -32,7 +33,7 @@ function setup() {
 }
 
 function draw() {
-  //console.log('x ', mouseX, 'y ', mouseY)
+  // hvis der klikkes med musen tjekkes der også om man er inde for en trommes område,
 
   // stortrommen
   if (mouseIsPressed) {
