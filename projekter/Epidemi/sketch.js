@@ -3,6 +3,7 @@ let n;
 let mennesker = [];
 
 class Mennesker {
+  //parameter som der skal bruges for at lave et menneske
   constructor(x, y, radius, ret_x, ret_y, r, g, b) {
     this.x = x;
     this.y = y;
@@ -13,11 +14,13 @@ class Mennesker {
     this.g = g;
     this.b = b;
   }
+  //gør så menneskerne kan tegne og har en farve
   draw() {
     fill(this.r, this.g, this.b);
     circle(this.x, this.y, this.radius * 2);
   }
 
+  //tjekker efter kolision med kanten a canvas
   collision(width, height) {
     if (this.x + this.radius > width) {
       this.ret_x = -this.ret_x;
@@ -34,7 +37,7 @@ class Mennesker {
     this.x = this.x + this.ret_x;
     this.y = this.y + this.ret_y;
   }
-
+  // tjekker for kolision mellem ander mennekser
   hit(other_x, other_y, other_r) {
     if (dist(this.x, this.y, other_x, other_y) < other_r + this.radius) {
       print("hit");
@@ -46,6 +49,7 @@ function setup() {
   createCanvas(800, 400);
 
   n = 50;
+  //sættter mennekser i et array
   for (let i = 0; i < n; i++) {
     mennesker.push(
       new Mennesker(
@@ -60,10 +64,11 @@ function setup() {
       )
     );
   }
-  print(height, width);
 }
+
 function draw() {
   background(220);
+  //tegner mennekserne og tjekker for kolisoner
   for (let i = 0; i < n; i++) {
     mennesker[i].draw();
     mennesker[i].collision(width, height);
