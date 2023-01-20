@@ -41,6 +41,31 @@ class Figur_1 {
         i - 1 + mouseX - flyt,
         y2 - mouseY + flyt
       );
+      //tegner firkant rundt omm figurens (slettes senere)
+      line(
+        0 + mouseX - flyt,
+        -4 - mouseY + flyt,
+        0 + mouseX - flyt,
+        127 - mouseY + flyt
+      );
+      line(
+        0 + mouseX - flyt,
+        127 - mouseY + flyt,
+        20 + mouseX - flyt,
+        127 - mouseY + flyt
+      );
+      line(
+        20 + mouseX - flyt,
+        127 - mouseY + flyt,
+        20 + mouseX - flyt,
+        -4 - mouseY + flyt
+      );
+      line(
+        20 + mouseX - flyt,
+        -4 - mouseY + flyt,
+        0 + mouseX - flyt,
+        -4 - mouseY + flyt
+      );
     }
   }
   colider() {}
@@ -73,6 +98,10 @@ class Figur_2 {
       let y2 = a * (i - 1) + b;
       line(i, y1, i - 1, y2);
     }
+    line(0, -10.14, 0, 20);
+    line(0, 20, 25, 20);
+    line(25, 20, 25, -10.14);
+    line(25, -10.14, 0, -10.14);
   }
 }
 
@@ -86,7 +115,10 @@ function setup() {
 function draw() {
   background(220);
   translate(200, 200);
+  strokeWeight(1);
   scale(1, -1);
   figur2.draw();
   figur1.draw();
+  strokeWeight(5);
+  point(0, 0);
 }

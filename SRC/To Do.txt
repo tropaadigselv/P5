@@ -1,0 +1,20 @@
+1. Lav en funktion der tjekker om der er overlap mellem dem (lav firkanter rundt om figurene)
+
+2. implementer Newton Raphson (start i maple)
+
+3. kommenter kode
+
+4. 
+
+
+
+
+figurer:
+
+figur 1:
+Dm[0;20]
+Vm[-4;127]
+
+figur 2:
+Dm[0;25]
+Vm[-10.14;20]
