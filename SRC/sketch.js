@@ -9,10 +9,11 @@ class Figur_1 {
 
   draw() {
     //tegner parabel
-    for (let i = 0; i <= 20; i++) {
+    for (let i = 0; i <= 20; i += 0.001) {
       let y1 = (1 / 4) * sq(i) - 2 * i;
       let y2 = (1 / 4) * sq(i - 1) - 2 * (i - 1);
       line(i + difX, y1 - difY, i - 1 + difX, y2 - difY);
+      //print(dist(i + difX, y1 - difY, i - 1 + difX, y2 - difY));
     }
     /*
     //tegner ekspotienal funktion
