@@ -1,0 +1,10 @@
+
+//Newton-Raphson funktion
+NewtonRaphson(f(x),g(x))
+	h(x)=f(x)-g(x)
+	hd(x)=h'(x)	
+		LOOP
+		x1=x0-(h(x0)/hd(x0))
+		x0=x1
+		Print: x1
+		END LOOP

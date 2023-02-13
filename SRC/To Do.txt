@@ -4,7 +4,7 @@
 
 3. kommenter kode
 
-4. 
+4. lav child klasser for hver af mine funktioner som laver mine figurer
 
 
 
