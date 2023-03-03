@@ -14,22 +14,6 @@ class Figur_1 {
       let y2 = (1 / 4) * sq(i - 1) - 2 * (i - 1);
       line(i + difX, y1 - difY, i - 1 + difX, y2 - difY);
     }
-    /*
-    //tegner ekspotienal funktion
-    for (let i = 0; i <= 3; i++) {
-      let y1 = pow(5, i);
-      let y2 = pow(5, i - 1);
-      line(i + difX, y1 - difY, i - 1 + difX, y2 - difY);
-    }
-    //tegner skrå linje
-    for (let i = 3; i <= 20; i++) {
-      let a = ((1 / 4) * sq(20) - 2 * 20 - pow(5, 3)) / (20 - 3);
-      let b = -a * 3 + pow(5, 3);
-      let y1 = a * i + b;
-      let y2 = a * (i - 1) + b;
-      line(i + difX, y1 - difY, i - 1 + difX, y2 - difY);
-    }
-    */
   }
 }
 
@@ -44,9 +28,9 @@ class Figur_2 {
       let y2 = 10 * sin((i - 1) / 4 + 11) + 10;
       line(i, y1, i - 1, y2);
     }
-    /*
+
     //tegner 5 grads polynumie
-    for (let i = 25; i >= 10; i--) {
+    for (let i = 25; i >= 11; i--) {
       let y1 = (pow(i / 10 - 5, 5) + 10) / 100;
       let y2 = (pow((i - 1) / 10 - 5, 5) + 10) / 100;
       line(i, y1, i - 1, y2);
@@ -60,19 +44,33 @@ class Figur_2 {
       let y1 = a * i + b;
       let y2 = a * (i - 1) + b;
       line(i, y1, i - 1, y2);
-    }*/
+    }
   }
-  colider() {
-    if (mouseX > 180 && mouseX < 225) {
-      if (mouseY < 200 + 60 && mouseY > 180 - 4) {
-        newton_raphson();
+  colider1() {
+    if (mouseX > 100 && mouseX < 225) {
+      if (mouseY > 175 && mouseY < 260) {
+        newton_raphson1();
+      }
+    }
+  }
+  colider2() {
+    if (mouseX > 100 && mouseX < 190) {
+      if (mouseY > 195 && mouseY < 270) {
+        //newton_raphson2();
+      }
+    }
+  }
+  colider3() {
+    if (mouseX > 190 && mouseX < 205) {
+      if (mouseY > 197 && mouseY < 260) {
+        //newton_raphson3();
       }
     }
   }
 }
 
 function setup() {
-  createCanvas(800, 800);
+  createCanvas(800, 600);
   flyt = 200;
   difX = mouseX - flyt;
   difY = mouseY - flyt;
@@ -81,6 +79,7 @@ function setup() {
 }
 
 function draw() {
+  //print(mouseX, mouseY);
   difX = mouseX - flyt;
   difY = mouseY - flyt;
   background(220);
@@ -89,15 +88,17 @@ function draw() {
   stroke(0);
   scale(1, -1);
   figur2.draw();
-  figur2.colider();
+  figur2.colider1();
+  figur2.colider2();
+  figur2.colider3();
   figur1.draw();
   strokeWeight(3);
   stroke("blue");
   point(0, 0);
 }
 
-function newton_raphson() {
-  x1 = 20;
+function newton_raphson1() {
+  x1 = 10;
   f = ((1 / 4) * sq(x1) - 2 * x1) * -1;
   g = (10 * sin(x1 / 4 + 11) + 10) * -1;
   h = ((1 / 4) * sq(x1) - 2 * x1) * -1 - (10 * sin(x1 / 4 + 11) + 10) * -1;
@@ -113,6 +114,7 @@ function newton_raphson() {
     (x1 + 0.1 - (x1 - 0.1));
   print(hd);
   hdd = 1 / 2 + (5 * sin(x1 / 4 + 11)) / 8;
+  print(hdd);
   let score = abs(h * hdd) / abs(sq(hd));
   print("score er " + score);
   let done = false;
@@ -128,6 +130,8 @@ function newton_raphson() {
         ((1 / 4) * sq(x1 - 0.1) - 2 * (x1 - 0.1)) * -1 -
         (10 * sin((x1 - 0.1) / 4 + 11) + 10) * -1) /
       (x1 + 0.1 - (x1 - 0.1));
+    hdd = 1 / 2 + (5 * sin(x1 / 4 + 11)) / 8;
+    print(hdd, hd);
     score = abs(h * hdd) / abs(sq(hd));
     print("score er " + score);
   }
