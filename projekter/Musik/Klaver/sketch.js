@@ -73,7 +73,7 @@ function setup() {
   circle(325, 240, 15);
 
   //de sorte tangenter
-  fill(000);
+  fill(0,0,0);
   rect(width - 715, height / 2, 30, 80);
   rect(width - 665, height / 2, 30, 80);
   rect(width - 565, height / 2, 30, 80);
@@ -100,7 +100,7 @@ function setup() {
   text("D", 597, 200);
   text("F", 693, 200);
 
-  fill(000);
+  fill(0,0,0);
   textStyle(BOLD);
   text("Q", 20, 230);
   text("W", 70, 230);
